@@ -8,15 +8,17 @@ import About from "./pages/About";
 export default function App() {
   return (
     <Router>
-      <Navbar />
-      <main className="px-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/qr-code" element={<QRCodePage />} />
-          <Route path="/shorten-url" element={<ShortenURLPage />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </main>
+      <div className="min-h-screen bg-amber-100">
+        <Navbar />
+        <main className="px-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/qr-code" element={<QRCodePage />} />
+            <Route path="/shorten-url" element={<ShortenURLPage />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+      </div>
     </Router>
   );
 }

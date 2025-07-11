@@ -37,49 +37,58 @@ export default function ShortenURLPage() {
   };
 
   return (
-    <div className="max-w-xl mx-auto py-10">
-      <h2 className="text-2xl font-bold text-amber-800 mb-4">Shorten URL</h2>
+    <div className="max-w-2xl mx-auto py-12 px-4">
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-3xl font-extrabold text-amber-800 mb-4">Shorten a URL</h2>
 
-      <input
-        type="text"
-        placeholder="Enter long URL"
-        value={originalURL}
-        onChange={(e) => setOriginalURL(e.target.value)}
-        className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800 mb-4"
-      />
+        <input
+          type="text"
+          placeholder="Enter a long URL to shorten"
+          value={originalURL}
+          onChange={(e) => setOriginalURL(e.target.value)}
+          className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800 mb-4"
+        />
 
-      <button
-        onClick={shortenURL}
-        disabled={loading}
-        className="bg-amber-800 text-white px-4 py-2 rounded hover:bg-amber-900"
-      >
-        {loading ? "Shortening..." : "Shorten URL"}
-      </button>
+        <button
+          onClick={shortenURL}
+          disabled={loading}
+          className="w-full bg-amber-800 text-white py-2 rounded hover:bg-amber-900 transition"
+        >
+          {loading ? "Shortening..." : "Shorten URL"}
+        </button>
 
-      {shortURL && (
-        <div className="mt-6 space-y-4 bg-white p-4 rounded shadow">
-          <div className="flex items-center justify-between">
-            <span className="text-zinc-700">{shortURL}</span>
+        {shortURL && (
+          <div className="mt-6 space-y-4 bg-zinc-50 p-5 rounded border border-zinc-200">
+            <div className="flex items-center justify-between">
+              <a
+                href={shortURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-700 underline break-all"
+              >
+                {shortURL}
+              </a>
+              <button
+                onClick={copyToClipboard}
+                className="text-sm bg-amber-800 text-white px-3 py-1 rounded hover:bg-amber-900"
+              >
+                Copy
+              </button>
+            </div>
+
+            <div ref={qrRef} className="flex justify-center mt-4">
+              <QRCodeCanvas value={shortURL} size={180} bgColor="#fff" fgColor="#92400e" />
+            </div>
+
             <button
-              onClick={copyToClipboard}
-              className="text-sm bg-amber-800 text-white px-2 py-1 rounded hover:bg-amber-900"
+              onClick={downloadQR}
+              className="w-full bg-amber-800 text-white py-2 rounded hover:bg-amber-900"
             >
-              Copy
+              Download QR Code
             </button>
           </div>
-
-          <div ref={qrRef} className="flex justify-center mt-4">
-            <QRCodeCanvas value={shortURL} size={180} bgColor="#fff" fgColor="#92400e" />
-          </div>
-
-          <button
-            onClick={downloadQR}
-            className="mt-4 w-full bg-amber-800 text-white py-2 rounded hover:bg-amber-900"
-          >
-            Download QR Code
-          </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

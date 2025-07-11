@@ -64,18 +64,18 @@ END:VEVENT`;
     link.click();
   };
 
+  const inputClass = "w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800";
+
   const renderInputs = () => {
     switch (qrType) {
       case "url":
-        return (
-          <input type="text" name="url" placeholder="Enter website URL" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-        );
+        return <input type="text" name="url" placeholder="Enter website URL" onChange={handleChange} className={inputClass} />;
       case "wifi":
         return (
           <>
-            <input type="text" name="ssid" placeholder="SSID" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <input type="text" name="password" placeholder="Password" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <select name="encryption" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800">
+            <input type="text" name="ssid" placeholder="SSID" onChange={handleChange} className={inputClass} />
+            <input type="text" name="password" placeholder="Password" onChange={handleChange} className={inputClass} />
+            <select name="encryption" onChange={handleChange} className={inputClass}>
               <option value="WPA">WPA/WPA2</option>
               <option value="WEP">WEP</option>
               <option value="nopass">No Password</option>
@@ -85,46 +85,44 @@ END:VEVENT`;
       case "email":
         return (
           <>
-            <input type="email" name="email" placeholder="Email Address" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <input type="text" name="subject" placeholder="Subject" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <textarea name="body" placeholder="Message Body" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
+            <input type="email" name="email" placeholder="Email Address" onChange={handleChange} className={inputClass} />
+            <input type="text" name="subject" placeholder="Subject" onChange={handleChange} className={inputClass} />
+            <textarea name="body" placeholder="Message Body" onChange={handleChange} className={inputClass} />
           </>
         );
       case "phone":
-        return (
-          <input type="tel" name="phone" placeholder="Phone Number" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-        );
+        return <input type="tel" name="phone" placeholder="Phone Number" onChange={handleChange} className={inputClass} />;
       case "sms":
         return (
           <>
-            <input type="tel" name="smsNumber" placeholder="Phone Number" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <textarea name="smsMessage" placeholder="Message" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
+            <input type="tel" name="smsNumber" placeholder="Phone Number" onChange={handleChange} className={inputClass} />
+            <textarea name="smsMessage" placeholder="Message" onChange={handleChange} className={inputClass} />
           </>
         );
       case "vcard":
         return (
           <>
-            <input name="name" placeholder="Full Name" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <input name="org" placeholder="Organization" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <input name="vPhone" placeholder="Phone" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <input name="vEmail" placeholder="Email" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <input name="vAddress" placeholder="Address" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
+            <input name="name" placeholder="Full Name" onChange={handleChange} className={inputClass} />
+            <input name="org" placeholder="Organization" onChange={handleChange} className={inputClass} />
+            <input name="vPhone" placeholder="Phone" onChange={handleChange} className={inputClass} />
+            <input name="vEmail" placeholder="Email" onChange={handleChange} className={inputClass} />
+            <input name="vAddress" placeholder="Address" onChange={handleChange} className={inputClass} />
           </>
         );
       case "event":
         return (
           <>
-            <input name="title" placeholder="Event Title" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <input name="start" type="datetime-local" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <input name="end" type="datetime-local" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <input name="location" placeholder="Location" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
+            <input name="title" placeholder="Event Title" onChange={handleChange} className={inputClass} />
+            <input name="start" type="datetime-local" onChange={handleChange} className={inputClass} />
+            <input name="end" type="datetime-local" onChange={handleChange} className={inputClass} />
+            <input name="location" placeholder="Location" onChange={handleChange} className={inputClass} />
           </>
         );
       case "geo":
         return (
           <>
-            <input name="lat" placeholder="Latitude" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
-            <input name="lng" placeholder="Longitude" onChange={handleChange} className="w-full p-2 border border-zinc-300 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-800" />
+            <input name="lat" placeholder="Latitude" onChange={handleChange} className={inputClass} />
+            <input name="lng" placeholder="Longitude" onChange={handleChange} className={inputClass} />
           </>
         );
       default:
@@ -133,32 +131,37 @@ END:VEVENT`;
   };
 
   return (
-    <div className="max-w-xl mx-auto py-10">
-      <h2 className="text-2xl font-bold text-amber-800 mb-4">Generate QR Code</h2>
+    <div className="max-w-2xl mx-auto py-12 px-4">
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-3xl font-extrabold text-amber-800 mb-4">Generate QR Code</h2>
 
-      <label className="block mb-2 font-medium text-zinc-700">Select QR Code Type:</label>
-      <select value={qrType} onChange={(e) => setQrType(e.target.value)} className="w-full p-2 border border-zinc-300 rounded shadow-sm mb-4 focus:outline-none focus:ring-2 focus:ring-amber-800">
-        {qrTypes.map((type) => (
-          <option key={type.value} value={type.value}>{type.label}</option>
-        ))}
-      </select>
+        <label className="block mb-2 font-medium text-zinc-700">Select QR Code Type:</label>
+        <select value={qrType} onChange={(e) => setQrType(e.target.value)} className={inputClass + " mb-4"}>
+          {qrTypes.map((type) => (
+            <option key={type.value} value={type.value}>{type.label}</option>
+          ))}
+        </select>
 
-      <div className="space-y-3">{renderInputs()}</div>
+        <fieldset className="space-y-3 mb-6">
+          <legend className="sr-only">QR Form Inputs</legend>
+          {renderInputs()}
+        </fieldset>
 
-      <div ref={qrRef} className="mt-6 p-4 bg-white shadow rounded flex justify-center">
+        <div ref={qrRef} className="mt-4 p-4 bg-zinc-50 border rounded flex justify-center">
+          {getQRCodeValue() && (
+            <QRCodeCanvas value={getQRCodeValue()} size={200} bgColor="#ffffff" fgColor="#92400e" />
+          )}
+        </div>
+
         {getQRCodeValue() && (
-          <QRCodeCanvas value={getQRCodeValue()} size={200} bgColor="#fff" fgColor="#92400e" />
+          <button
+            onClick={downloadQR}
+            className="mt-6 w-full bg-amber-800 text-white py-2 rounded hover:bg-amber-900"
+          >
+            Download QR Code
+          </button>
         )}
       </div>
-
-      {getQRCodeValue() && (
-        <button
-          onClick={downloadQR}
-          className="mt-4 bg-amber-800 text-white px-4 py-2 rounded hover:bg-amber-900"
-        >
-          Download QR Code
-        </button>
-      )}
     </div>
   );
 }
