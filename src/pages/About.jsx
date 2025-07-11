@@ -1,38 +1,26 @@
 export default function About() {
   return (
-    <div className="py-16 px-4 max-w-4xl mx-auto">
-      <div className="bg-white shadow-md rounded-lg p-8">
-        <h2 className="text-3xl font-extrabold text-amber-800 mb-4">About ScanLink</h2>
-        <p className="text-zinc-700 text-lg mb-6">
-          <strong>ScanLink</strong> is your modern companion for generating smart, scannable QR codes and shortening long, unwieldy URLs with ease.
-        </p>
+    <div className="py-12 px-6 max-w-3xl mx-auto">
+      <h2 className="text-3xl font-bold text-amber-800 mb-4">About ScanLink</h2>
+      <p className="text-zinc-700 mb-4">
+        <strong>ScanLink</strong> is your all-in-one QR code solution crafted for ease, versatility, and professional utility.
+        Whether you're managing business campaigns or simplifying daily tasks, ScanLink empowers you to generate, customize, and share QR codes effortlessly.
+      </p>
 
-        <div className="space-y-4">
-          <div>
-            <h3 className="text-xl font-semibold text-amber-700 mb-1">🔗 Why ScanLink?</h3>
-            <p className="text-zinc-600">
-              In a world where speed and simplicity matter, ScanLink helps users and businesses connect smarter — whether it's sharing a website, contact info, event details, or location.
-            </p>
-          </div>
+      <p className="text-zinc-700 mb-4">
+        With support for multiple QR types—including URLs, Wi-Fi credentials, contact info, events, and geolocations—ScanLink adapts to your unique needs.
+        Our built-in URL shortener also lets you share cleaner, compact links with auto-generated QR codes.
+      </p>
 
-          <div>
-            <h3 className="text-xl font-semibold text-amber-700 mb-1">⚙️ What You Can Do</h3>
-            <ul className="list-disc pl-5 text-zinc-600">
-              <li>Generate QR codes for URLs, Wi-Fi, contact cards, calendar events, and more.</li>
-              <li>Shorten long URLs using a fast, reliable API (TinyURL).</li>
-              <li>Download your QR codes as images for print or digital use.</li>
-              <li>Copy and share links directly from the app.</li>
-            </ul>
-          </div>
+      <p className="text-zinc-700 mb-4">
+        Go further with <span className="text-amber-800 font-medium">advanced styling features</span> like foreground/background color pickers,
+        adjustable sizes, margins, error correction levels, and logo embedding.
+        Plus, enjoy the flexibility of downloading your QR in PNG or SVG formats.
+      </p>
 
-          <div>
-            <h3 className="text-xl font-semibold text-amber-700 mb-1">🎯 Our Goal</h3>
-            <p className="text-zinc-600">
-              To provide a fast, elegant, and no-friction experience for sharing information through powerful QR and URL tools — all with a warm, professional design.
-            </p>
-          </div>
-        </div>
-      </div>
+      <p className="text-zinc-700">
+        Whether you're a small business, event organizer, educator, or tech enthusiast, ScanLink is the smart and elegant way to connect offline to online.
+      </p>
     </div>
   );
 }
